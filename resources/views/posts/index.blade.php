@@ -28,7 +28,7 @@
                                 <td class="text-center">
                                     {{ ($key + 1) + ($posts->currentPage() - 1) * ($posts->perPage()) }}
                                 </td>
-                                <td>{{ $post->user->name }}</td>
+                                <td>{{ $post->owner_name }}</td>
                                 <td>{{ $post->post }}</td>
                                 <td>
                                     <div class="btn-group">
