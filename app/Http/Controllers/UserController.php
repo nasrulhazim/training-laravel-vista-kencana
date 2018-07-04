@@ -52,12 +52,14 @@ class UserController extends Controller
         ]);
 
         // create new user
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
+        swal()->success('Good Job', 'You have created a new user named ' . $user->name);
+        
         // redirect to users page
         return redirect()->route('users.index');
     }
