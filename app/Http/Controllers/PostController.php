@@ -55,6 +55,8 @@ class PostController extends Controller
 
         Post::create($data);
 
+        swal()->success('Good Job', 'You have created a new post');
+
         return redirect()->route('posts.index');
     }
 
@@ -97,6 +99,8 @@ class PostController extends Controller
 
         Post::where('id', $id)->update($request->only('post'));
 
+        swal()->success('Good Job', 'You have updated a post');
+
         return redirect()->route('posts.index');
     }
 
@@ -109,6 +113,8 @@ class PostController extends Controller
     public function destroy($id)
     {
         Post::destroy($id);
+
+        swal()->success('Good Job', 'You have deleted a post');
 
         return redirect()->route('posts.index');
     }

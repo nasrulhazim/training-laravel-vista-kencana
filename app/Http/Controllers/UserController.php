@@ -59,7 +59,7 @@ class UserController extends Controller
         ]);
 
         swal()->success('Good Job', 'You have created a new user named ' . $user->name);
-        
+
         // redirect to users page
         return redirect()->route('users.index');
     }
@@ -103,6 +103,8 @@ class UserController extends Controller
 
         User::where('id', $id)->update($request->only('name'));
 
+        swal()->success('Good Job', 'You have update the user.');
+
         return redirect()->route('users.index');
     }
 
@@ -115,6 +117,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
+
+        swal()->success('Good Job', 'You have deleted a user.');
 
         return redirect()->route('users.index');
     }
