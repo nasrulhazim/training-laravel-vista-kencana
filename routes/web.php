@@ -36,10 +36,6 @@ Route::as('pages.')
 			'/contact-us', 
 			'PageController@contactUs'
 		)->name('contact_us');
-
-		Route::get('/', function () {
-		    return view('welcome');
-		})->name('welcome');
 	});
 
 
