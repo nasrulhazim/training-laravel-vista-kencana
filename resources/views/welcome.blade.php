@@ -92,4 +92,5 @@
             </div>
         </div>
     </body>
+    @include('components.sweetalert')
 </html>
