@@ -69,4 +69,16 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function redirectTo()
+    {
+        auth()->guard()->logout(); // force to logout
+
+        swal()->success('Good Job',
+            'You have successfully registered. Please check your e-mail for activation account.',
+            []
+        );
+
+        return '/';
+    }
 }
