@@ -36,9 +36,11 @@
                                             class="btn btn-sm btn-info">
                                             Details        
                                         </a>
+                                        @hasanyrole('developer|administrator')
                                         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-primary">
                                             Edit
                                         </a>
+                                        @endhasanyrole
                                         <div onclick="
                                                 if(confirm('Are you sure want to delete this user?')) {
                                                     document.getElementById('delete-user-{{ $user->id }}').submit();

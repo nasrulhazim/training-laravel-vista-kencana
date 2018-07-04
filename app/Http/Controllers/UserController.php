@@ -84,6 +84,12 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        abort_unless(
+            auth()->user()->hasAnyRole(['developer', 'administrator']),
+            401,
+            'You are not allowed to edit this post.'
+        );
+        
         $user = User::findOrFail($id);
         return view('users.edit', compact('user'));
     }
